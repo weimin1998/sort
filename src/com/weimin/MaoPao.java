@@ -4,13 +4,26 @@ import java.util.Arrays;
 
 /**
  * 冒泡排序
- * o(n^2)
+ * O(n^2)
+ *
  */
 public class MaoPao {
     public static void main(String[] args) {
         int[] array = {3, 9, -1, 10, -2};
         sort(array);
         System.out.println(Arrays.toString(array));
+
+        int[] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random()*80000);
+        }
+
+        long start = System.currentTimeMillis();
+
+        sort(arr);
+        long end = System.currentTimeMillis();
+
+        System.out.println(end-start); // 14531 ms
     }
 
     public static void sort(int[] array) {
